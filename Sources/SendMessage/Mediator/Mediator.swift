@@ -3,9 +3,9 @@
 //
 
 class Mediator<MessageType>: Sender {
-    internal var providers: [Provider<MessageType>] = []
+    internal var providers: [AnyProvider<MessageType>] = []
     
-    func add(provider: Provider<MessageType>) {
+    func add(provider: AnyProvider<MessageType>) {
         providers.append(provider)
     }
     

@@ -1,6 +1,6 @@
 var mediator = OutageMediator()
-mediator.add(provider: Sms<Outage>(name: "Sms"))
-mediator.add(provider: Email<Outage>(name: "Email"))
+mediator.add(provider: AnyProvider(name: "Sms", Sms<Outage>()))
+mediator.add(provider: AnyProvider(name: "Email", Email<Outage>()))
 
 let outage = Outage(title: "Test", message: "This is a test message")
 mediator.send(message: outage)

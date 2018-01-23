@@ -2,8 +2,9 @@
 //  Sms.swift
 //
 
-final class Sms<MessageType>: Provider<MessageType> {
-    override func receive(message: MessageType) {
-        super.receive(message: message)
+final class Sms<MessageType>: Receiver {
+    func receive(message: MessageType) {
+//        let className = "\(type(of: message))"
+//        print("\(name) received: \(className)")
     }
 }
