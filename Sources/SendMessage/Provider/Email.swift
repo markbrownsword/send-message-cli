@@ -2,8 +2,9 @@
 //  Email.swift
 //
 
-final class Email<MessageType>: Provider<MessageType> {
-    override func receive(message: MessageType) {
-        super.receive(message: message)
+final class Email<MessageType>: Receiver {
+    func receive(message: MessageType) {
+//        let className = "\(type(of: message))"
+//        print("\(name) received: \(className)")
     }
 }

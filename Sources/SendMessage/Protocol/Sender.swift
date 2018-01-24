@@ -4,9 +4,6 @@
 
 protocol Sender {
     associatedtype MessageType
-    associatedtype ReceiverType: Receiver
-    
-    var providers: [ReceiverType] { get }
-    
+    var providers: [AnyProvider<MessageType>] { get }
     func send(message: MessageType)
 }
