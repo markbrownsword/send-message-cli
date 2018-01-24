@@ -3,15 +3,15 @@
 //
 
 class Mediator<MessageType>: Sender {
-    internal var providers: [AnyProvider<MessageType>] = []
+    internal var receivers: [AnyReceiver<MessageType>] = []
     
-    func add(provider: AnyProvider<MessageType>) {
-        providers.append(provider)
+    func add(receiver: AnyReceiver<MessageType>) {
+        receivers.append(receiver)
     }
     
     func send(message: MessageType) {
-        for provider in providers {
-            provider.receive(message: message)
+        for receiver in receivers {
+            receiver.receive(message: message)
         }
     }
 }
