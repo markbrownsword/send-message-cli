@@ -2,10 +2,9 @@
 //  Sms.swift
 //
 
-final class Sms<MessageType>: Receiver {
+final class Sms<MessageType: CustomStringConvertible>: Receiver {
     func receive(message: MessageType) {
         let name = "\(type(of: self))"
-        let className = "\(type(of: message))"
-        print("\(name) received: \(className)")
+        print("Type \(name) received message: \(message)")
     }
 }

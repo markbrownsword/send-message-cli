@@ -2,7 +2,7 @@
 // AnyReceiver.swift
 //
 
-class AnyReceiver<MessageType>: Receiver {
+class AnyReceiver<MessageType: CustomStringConvertible>: Receiver {
     private let _receive: (_ message: MessageType) -> Void
     
     init<ReceiverType: Receiver>(_ receiver: ReceiverType) where ReceiverType.MessageType == MessageType {

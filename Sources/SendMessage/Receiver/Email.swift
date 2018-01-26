@@ -2,10 +2,9 @@
 //  Email.swift
 //
 
-final class Email<MessageType>: Receiver {
+final class Email<MessageType: CustomStringConvertible>: Receiver {
     func receive(message: MessageType) {
         let name = "\(type(of: self))"
-        let className = "\(type(of: message))"
-        print("\(name) received: \(className)")
+        print("Type \(name) received message: \(message)")
     }
 }
