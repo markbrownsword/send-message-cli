@@ -3,6 +3,6 @@
 //
 
 protocol Receiver {
-    associatedtype MessageType
+    associatedtype MessageType: CustomStringConvertible
     func receive(message: MessageType)
 }
