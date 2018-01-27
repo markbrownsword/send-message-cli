@@ -2,7 +2,7 @@
 // Mediator.swift
 //
 
-class Mediator<MessageType: CustomStringConvertible>: Sender {
+final class Mediator<MessageType: CustomStringConvertible>: Sender {
     internal var receivers: [AnyReceiver<MessageType>] = []
     
     func add(receiver: AnyReceiver<MessageType>) {
